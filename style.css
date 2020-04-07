@@ -1,0 +1,38 @@
+.navbar {
+    color: white;
+    background-color: #333333;
+}
+
+.navbar-text {
+    text-align: center;
+    font-size: 64px;
+}
+
+.container {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.search-card {
+    background-color: lightgrey;
+    border-color: transparent;
+    border-style: none;
+}
+
+.city-text {
+    font-size: 24px;
+}
+
+#button-addon2 {
+    background-color: blue;
+    color: white;
+}
+
+.card {
+    display: inline-block;
+}
+
+.weather-dis {
+    margin-left: 10px;
+    margin-top: 10px;
+}
