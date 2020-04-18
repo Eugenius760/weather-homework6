@@ -22,13 +22,24 @@ $(document).ready(function () {
 
             for (i = 0; i < response.list.length && i <= 4; i++) {
                console.log(response.list[i])
+               
+            //    var tempList = response.main.temp;
+            //    for (var j = 0; j < tempList.length; j++) {
+            //        console.log(tempList[j])
+            //    }
 
             }
 
             var five = $("<div>")
 
             var temp5 = (response.list[i].main.temp - 273.15) * 1.80 + 32;
+            var tempFor = ("Temperture: " + temp5.toFixed(1));
+            five.append(tempFor)
+
+            $(".five-day").append(five)
             console.log(temp5)
+
+
 
 
         });
@@ -44,6 +55,9 @@ $(document).ready(function () {
             // var cell = $("<td>");
             var weath = $("<h3>").text(response.name);
             showWeath.append(weath);
+            var date = moment();
+            var dateDisplay = $("<h3>").text(date.format("dddd[,] MMMM Do"));
+            weath.append(dateDisplay);
 
             var tempF = (response.main.temp - 273.15) * 1.80 + 32;
             var temperture = $("<p>").text("Temperture: " + tempF.toFixed(1));
