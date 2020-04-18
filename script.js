@@ -10,8 +10,8 @@ $(document).ready(function () {
     citySearch = $(".type-in").val();
     var queryURLfor = "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + apiKey;
     var queryURL5 = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySearch + "&appid=" + apiKey;
-    //var queryUV = "api.openweathermap.org/data/2.5/uvi?" + apiKey + "lat=" + lati + "&lon=" + loni;
-    //console.log(queryURL5)
+    // var queryUV = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey + "lat=" + lati + "&lon=" + loni;
+    // console.log(queryUV)
     
        
         $.ajax({
@@ -21,11 +21,13 @@ $(document).ready(function () {
             console.log(response);
 
             for (i = 0; i < response.list.length && i <= 4; i++) {
-               console.log(response.list[i])
-               
-            //    var tempList = response.main.temp;
-            //    for (var j = 0; j < tempList.length; j++) {
-            //        console.log(tempList[j])
+                var listT = response.list[i];
+               console.log(listT);
+
+                var mainList = listT[i].main;
+                console.log(mainList)
+            //    for (var j = 0; j < mainList.main.length; j++) {
+            //        console.log(mainList.main[j])
             //    }
 
             }
@@ -68,6 +70,7 @@ $(document).ready(function () {
 
             var wind = $("<p>").text("Wind Speed: " + response.wind.speed);
             showWeath.append(wind)
+
             // row.append(cell);
             // cell.append(weath);
             // cell.append(temperture);
@@ -80,14 +83,15 @@ $(document).ready(function () {
         });
 
 
-        //var queryUV = "api.openweathermap.org/data/2.5/uvi?" + apiKey + "lat=" + lati + "&lon=" + loni
+        // var queryUV = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey + "lat=" + lati + "&lon=" + loni
         // $.ajax({
         //     url: queryUV,
         //     method: "GET",
         // }).then(function (response) {
         //     console.log(response);
         //     //var queryUV = "api.openweathermap.org/data/2.5/uvi?" + apiKey + "lat=" + lati + "&lon=" + loni;
-        //     var lati = respnonse.coord.lat;
+        //     var lati = citySearch.text(respnonse.coord.lat);
+        //     console.log(lati)
         // })
       
 
