@@ -4,10 +4,12 @@ $(document).ready(function () {
     var apiKey = "13bd68f2e3fc3483173bb53558abd777"
 
     console.log(window.localStorage.getItem("citySearch"));
-    var searchHist = $("<tr>").text(window.localStorage.getItem("citySearch"));
-    $(".city-text").append(citySearch);
+    //var searchHist = $("<tr>").text(window.localStorage.getItem("citySearch"));
+    //$(".city-text").append(citySearch);
     $(".search-card").on("click", "#button-addon2", function () {
     citySearch = $(".type-in").val();
+    var searchHist = $("<tr>").text(citySearch);
+    $(".city-text").append(searchHist);
     var queryURLfor = "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + apiKey;
     var queryURL5 = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySearch + "&appid=" + apiKey;
     // var queryUV = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey + "lat=" + lati + "&lon=" + loni;
@@ -24,8 +26,8 @@ $(document).ready(function () {
                 var listT = response.list[i];
                console.log(listT);
 
-                var mainList = listT[i].main;
-                console.log(mainList)
+                // var mainList = listT[i].main;
+                // console.log(mainList)
             //    for (var j = 0; j < mainList.main.length; j++) {
             //        console.log(mainList.main[j])
             //    }
